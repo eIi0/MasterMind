@@ -1,0 +1,43 @@
+.header{
+    opacity: 1;
+    cursor: pointer;
+    background-color: #7971ea;
+    border: 5px #443ea0;
+    padding: 30px;
+    color: white;
+    font-size: 22px;
+    text-align: center;
+}
+
+.header, .footer{
+    flex-basis: 100%;
+}
+
+.footer{
+    background-color: #7971ea;
+    text-align: center;
+    padding: 15px;
+    color: rgb(255, 255, 255);
+}
+
+body{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Proposition{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.boxitem{
+    opacity: 1;
+    cursor: pointer;
+    background-color: #4e2280;
+    color: white;
+    margin: 1%;
+    font-size: 22px;
+    flex-basis: 31%;
+    text-align: center;
+}
