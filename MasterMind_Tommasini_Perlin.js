@@ -23,7 +23,7 @@ function tirage(){          //Fonction servant au tirage des couleurs
     let SuiteCouleurLettre = []
 
 
-    for(let i=0; i<5; i++){             //Boucle servant a l'affectation des 5 couleurs
+    for(let i=0; i<4; i++){             //Boucle servant a l'affectation des 5 couleurs
         SuiteCouleurNB.push(Math.floor(Math.random() * 6))          //Gérération des couleurs suivant le tableau en tête de la fonction + affectation dans l'array
         // Math.floor(Math.random() * 6) -> ici math.floor permet d'arrondir a l'unité, maths.random() genère un nombre entre 0 et 1, *6 pour obtenir un nombre entre 0 et 6
     }
