@@ -1,7 +1,36 @@
+function affichage(couleurs){
+    const rondContainer = document.getElementById('rondContainer');
 
+    let stylecolor = [];
 
-function affichage(){
+        couleurs.forEach(col => {                   //
+            if(col == 'R'){
+                stylecolor.push('red')
+            }
+            if(col == 'O'){
+                stylecolor.push('orange')
+            }
+            if(col == 'J'){
+                stylecolor.push('yellow')
+            }
+            if(col == 'M'){
+                stylecolor.push('brown')
+            }
+            if(col == 'B'){
+                stylecolor.push('blue')
+            }
+            if(col == 'V'){
+                stylecolor.push('green')
+            }
+        });
+        
 
+    for (const color of stylecolor) {
+        const rond = document.createElement('div');
+        rond.classList.add('circle');
+        rond.style.backgroundColor = color;
+        rondContainer.appendChild(rond);
+    }
 }
 
 function tirage(){          //Fonction servant au tirage des couleurs 
@@ -56,6 +85,44 @@ function rejouer(){
 
 }
 
-function resultat(){
+function resultat(TabCouleurTirage, TabCouleurUtilisateur){
 
+    let TabResultats = []
+
+    TabCouleurTirage.forEach((couleur, i) => {
+        if(TabCouleurUtilisateur[i] == couleur){
+            const rond = document.createElement('div');
+            rond.classList.add('circle');
+            rond.style.backgroundColor = 'black';
+            rondContainer.appendChild(rond);
+        }else{
+            for(let j=0; j>TabCouleurUtilisateur.length; i++){
+                if(TabCouleurUtilisateur[j] == couleur){
+                    const rond = document.createElement('div');
+                    rond.classList.add('circle');
+                    rond.style.backgroundColor = 'grey';
+                    rondContainer.appendChild(rond);
+                }
+                else if((TabCouleurUtilisateur[0] !== couleur )&&(TabCouleurUtilisateur[1] !== couleur )&&(TabCouleurUtilisateur[2] !== couleur )&&(TabCouleurUtilisateur[3] !== couleur )){
+                    const rond = document.createElement('div');
+                    rond.classList.add('circle');
+                    rond.style.backgroundColor = 'black';
+                    rondContainer.appendChild(rond);
+                }
+                else{
+                    break;
+                }
+
+                
+            }
+        }
+        
+    });
+
+    for (const color of stylecolor) {
+        const rond = document.createElement('div');
+        rond.classList.add('circle');
+        rond.style.backgroundColor = color;
+        rondContainer.appendChild(rond);
+    }
 }

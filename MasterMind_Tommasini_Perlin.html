@@ -10,10 +10,18 @@
 <body>
     <header class="header">Mini Mastermind</header>
 
-    <div class="boxitem">ee</div>
+    <div class="boxitem"> 
+        col = <span id="sum"></span>
+    </div>
     <div class="boxitem">ee</div>
     <div class="boxitem">ee</div>
 
     <footer class="footer"> Copyright Elio Tommasini - Clément Perlin</footer>
 </body>
+<script>
+    import { tirage } from './MasterMind_Tommasini_Perlin.js'
+    let test = [];
+    test = tirage();
+    document.getElementById("sum").innerHTML = test.join(', ');
+</script>
 </html>
