@@ -82,47 +82,37 @@ function tirage(){          //Fonction servant au tirage des couleurs
 }
 
 function rejouer(){
+    tirage();
 
 }
 
 function resultat(TabCouleurTirage, TabCouleurUtilisateur){
 
-    let TabResultats = []
+    let TabCouleurResultats = []
 
     TabCouleurTirage.forEach((couleur, i) => {
         if(TabCouleurUtilisateur[i] == couleur){
-            const rond = document.createElement('div');
-            rond.classList.add('circle');
-            rond.style.backgroundColor = 'black';
-            rondContainer.appendChild(rond);
+            TabCouleurResultats[i]="black"
         }else{
             for(let j=0; j>TabCouleurUtilisateur.length; i++){
-                if(TabCouleurUtilisateur[j] == couleur){
-                    const rond = document.createElement('div');
-                    rond.classList.add('circle');
-                    rond.style.backgroundColor = 'grey';
-                    rondContainer.appendChild(rond);
+                if((TabCouleurUtilisateur[0] == couleur)||(TabCouleurUtilisateur[1] == couleur)||(TabCouleurUtilisateur[2] == couleur)||(TabCouleurUtilisateur[3] == couleur)){
+                    TabCouleurResultats[i]="grey"
                 }
                 else if((TabCouleurUtilisateur[0] !== couleur )&&(TabCouleurUtilisateur[1] !== couleur )&&(TabCouleurUtilisateur[2] !== couleur )&&(TabCouleurUtilisateur[3] !== couleur )){
-                    const rond = document.createElement('div');
-                    rond.classList.add('circle');
-                    rond.style.backgroundColor = 'black';
-                    rondContainer.appendChild(rond);
+                    TabCouleurResultats[i]="white"
                 }
                 else{
                     break;
-                }
-
-                
+                }                
             }
         }
         
     });
 
-    for (const color of stylecolor) {
+    for(let i =0; i<TabCouleurResultats.length;i++){
         const rond = document.createElement('div');
         rond.classList.add('circle');
-        rond.style.backgroundColor = color;
+        rond.style.backgroundColor = TabCouleurResultats[i];
         rondContainer.appendChild(rond);
     }
 }
