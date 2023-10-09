@@ -1,28 +1,30 @@
-function affichage(couleurs){
+const SuiteCouleurLettre = []
+
+function affichage(TabCouleurUtilisateurInput){
     const rondContainer = document.getElementById('rondContainer');
 
     let stylecolor = [];
 
-        couleurs.forEach(col => {                   //
-            if(col == 'R'){
-                stylecolor.push('red')
-            }
-            if(col == 'O'){
-                stylecolor.push('orange')
-            }
-            if(col == 'J'){
-                stylecolor.push('yellow')
-            }
-            if(col == 'M'){
-                stylecolor.push('brown')
-            }
-            if(col == 'B'){
-                stylecolor.push('blue')
-            }
-            if(col == 'V'){
-                stylecolor.push('green')
-            }
-        });
+    TabCouleurUtilisateurInput.forEach(col => {                   //
+        if(col == 'R'){
+            stylecolor.push('red')
+        }
+        if(col == 'O'){
+            stylecolor.push('orange')
+        }
+        if(col == 'J'){
+            stylecolor.push('yellow')
+        }
+        if(col == 'M'){
+            stylecolor.push('brown')
+        }
+        if(col == 'B'){
+            stylecolor.push('blue')
+        }
+        if(col == 'V'){
+            stylecolor.push('green')
+        }
+    });
         
 
     for (const color of stylecolor) {
@@ -48,8 +50,8 @@ function tirage(){          //Fonction servant au tirage des couleurs
     */
 
 
-    let SuiteCouleurNB = []        //Déclaration du tableau contenant les couleurs sosu forme de nombre
-    let SuiteCouleurLettre = []
+            //Déclaration du tableau contenant les couleurs sosu forme de nombre
+    let SuiteCouleurNB = []
 
 
     for(let i=0; i<4; i++){             //Boucle servant a l'affectation des 5 couleurs
@@ -77,37 +79,42 @@ function tirage(){          //Fonction servant au tirage des couleurs
             SuiteCouleurLettre.push("J");
         }
     });
-
-    return SuiteCouleurNB;
 }
 
 function rejouer(){
+    const rondContainer = document.getElementById('rondContainer');
+    rondContainer.innerHTML = '';
+
     tirage();
 
 }
 
-function resultat(TabCouleurTirage, TabCouleurUtilisateur){
+function resultat(TabCouleurUtilisateurInput){
+
+    let TabCouleurTirage = SuiteCouleurLettre;
+    let TabCouleurUtilisateur = []
+
+    for(let i=0; i<TabCouleurUtilisateurInput.length; i++){             //Boucle sur le nombre de caraactère
+        TabCouleurUtilisateur.push(TabCouleurUtilisateurInput[i].toUpperCase())         //Correction lowercase ==> passage de minuscule a majuscule
+    }                                                                               
+    
+
 
     let TabCouleurResultats = []
 
     TabCouleurTirage.forEach((couleur, i) => {
         if(TabCouleurUtilisateur[i] == couleur){
             TabCouleurResultats[i]="black"
-        }else{
-            for(let j=0; j>TabCouleurUtilisateur.length; i++){
-                if((TabCouleurUtilisateur[0] == couleur)||(TabCouleurUtilisateur[1] == couleur)||(TabCouleurUtilisateur[2] == couleur)||(TabCouleurUtilisateur[3] == couleur)){
-                    TabCouleurResultats[i]="grey"
-                }
-                else if((TabCouleurUtilisateur[0] !== couleur )&&(TabCouleurUtilisateur[1] !== couleur )&&(TabCouleurUtilisateur[2] !== couleur )&&(TabCouleurUtilisateur[3] !== couleur )){
-                    TabCouleurResultats[i]="white"
-                }
-                else{
-                    break;
-                }                
-            }
+        }
+        else if((TabCouleurUtilisateur[0] == couleur)||(TabCouleurUtilisateur[1] == couleur)||(TabCouleurUtilisateur[2] == couleur)||(TabCouleurUtilisateur[3] == couleur)){
+            TabCouleurResultats[i]="grey"
+        }
+        else if((TabCouleurUtilisateur[0] !== couleur )&&(TabCouleurUtilisateur[1] !== couleur )&&(TabCouleurUtilisateur[2] !== couleur )&&(TabCouleurUtilisateur[3] !== couleur )){
+            TabCouleurResultats[i]="white"
         }
         
     });
+    const rondContainer = document.getElementById('rondContainer');
 
     for(let i =0; i<TabCouleurResultats.length;i++){
         const rond = document.createElement('div');
