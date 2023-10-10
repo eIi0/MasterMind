@@ -105,6 +105,12 @@ function rejouer(){
 
 }
 
+function jouer(){
+    tirage();
+}
+
+
+
 function resultat(TabCouleurUtilisateurInput, indexID){
 
     let TabCouleurTirage = SuiteCouleurLettre;
