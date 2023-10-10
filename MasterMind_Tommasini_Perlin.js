@@ -1,12 +1,13 @@
 const SuiteCouleurLettre = []
 
 function SentInput(indexID){
-    let input_id = ("Text"+toString(indexID))
-    let CouleurUtilisateurInput = document.getElementById(input_id).value;
+    let input_id = ("Text"+indexID)
+    let CouleurUtilisateurInput = document.getElementById(input_id);
     let TabCouleurUtilisateurInput;
     for(let i=0; i<CouleurUtilisateurInput.length;i++){
         TabCouleurUtilisateurInput[i].push(TabCouleurUtilisateurInput.substr(i,i+1))
     }
+    console.log(TabCouleurUtilisateurInput)
 
     affichage(TabCouleurUtilisateurInput,indexID)
     resultat(TabCouleurUtilisateurInput, indexID);
@@ -17,6 +18,8 @@ function affichage(TabCouleurUtilisateurInput,indexID){
     const rondContainer = document.getElementById('rondContainer');
 
     let stylecolor = [];
+
+    console.log(TabCouleurUtilisateurInput)
 
     TabCouleurUtilisateurInput.forEach(col => {                   //
         if(col == 'R'){
@@ -94,7 +97,7 @@ function tirage(){          //Fonction servant au tirage des couleurs
             SuiteCouleurLettre.push("J");
         }
     });
-    console.log()
+    console.log(SuiteCouleurLettre)
 }
 
 function rejouer(){
