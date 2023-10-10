@@ -9,19 +9,42 @@
 </head>
 <body>
     <header class="header">Mini Mastermind</header>
+    <div class="boxitem4"><input class="btn_partie" type="button" value="Commencer une partie !!!" onclick="rejouer()" /></div>
+    <div class="boxitem">Propositions</div>
+    <div class="boxitem">Affichage</div>
+    <div class="boxitem">Réponses</div>
 
-    <div class="boxitem"> 
-        col = <span id="sum"></span>
-    </div>
-    <div class="boxitem">ee</div>
-    <div class="boxitem">ee</div>
+    <div class="boxitem2" id="Text1">  
+        <input type="text_format"></div>
+    <div class="boxitem3" id="Input1"><input class="btn" type="button" value="Submit" onclick="SentInput(1)"></div>
+    <div class="boxitem" id="Affichage1"></div>
+    <div class="boxitem" id="Resultat1"></div>
 
+    <div class="boxitem2" id="Text2">  
+        <input type="text_format"></div>
+    <div class="boxitem3" id="Input2"><input class="btn" type="button" value="Submit" onclick="SentInput(2)"></div>
+    <div class="boxitem" id="Affichage2"></div>
+    <div class="boxitem" id="Resultat2"></div>
+
+    <div class="boxitem2" id="Text3">  
+        <input type="text_format"></div>
+    <div class="boxitem3" id="Input3"><input class="btn" type="button" value="Submit" onclick="SentInput(3)"></div>
+    <div class="boxitem" id="Affichage3"></div>
+    <div class="boxitem" id="Resultat3"></div>
+
+    <div class="boxitem2" id="Text4">  
+        <input type="text_format"></div>
+    <div class="boxitem3" id="Input4"><input class="btn" type="button" value="Submit" onclick="SentInput(4)"></div>
+    <div class="boxitem" id="Affichage4"></div>
+    <div class="boxitem" id="Resultat4"></div>
+
+    <div class="boxitem2" id="Text5">  
+        <input type="text_format"></div>
+    <div class="boxitem3" id="Input5"><input class="btn" type="button" value="Submit" onclick="SentInput(5)"></div>
+    <div class="boxitem" id="Affichage5"></div>
+    <div class="boxitem" id="Resultat5"></div>
+
+    <div class="boxitem4"><input class="btn_partie" type="button" value="Rejouer une partie !!!" onclick="rejouer()" /></div>    
     <footer class="footer"> Copyright Elio Tommasini - Clément Perlin</footer>
 </body>
-<script>
-    import { tirage } from './MasterMind_Tommasini_Perlin.js'
-    let test = [];
-    test = tirage();
-    document.getElementById("sum").innerHTML = test.join(', ');
-</script>
 </html>
