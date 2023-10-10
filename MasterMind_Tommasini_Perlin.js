@@ -1,6 +1,19 @@
 const SuiteCouleurLettre = []
 
-function affichage(TabCouleurUtilisateurInput){
+function SentInput(indexID){
+    let input_id = ("Text"+toString(indexID))
+    let CouleurUtilisateurInput = document.getElementById(input_id).value;
+    let TabCouleurUtilisateurInput;
+    for(let i=0; i<CouleurUtilisateurInput.length;i++){
+        TabCouleurUtilisateurInput[i].push(TabCouleurUtilisateurInput.substr(i,i+1))
+    }
+
+    affichage(TabCouleurUtilisateurInput,indexID)
+    resultat(TabCouleurUtilisateurInput, indexID);
+}
+
+function affichage(TabCouleurUtilisateurInput,indexID){
+    
     const rondContainer = document.getElementById('rondContainer');
 
     let stylecolor = [];
@@ -25,10 +38,12 @@ function affichage(TabCouleurUtilisateurInput){
             stylecolor.push('green')
         }
     });
+
+    let return_id = ("Affichage"+toString(indexID))
         
 
     for (const color of stylecolor) {
-        const rond = document.createElement('div');
+        const rond = document.getElementById(return_id);
         rond.classList.add('circle');
         rond.style.backgroundColor = color;
         rondContainer.appendChild(rond);
@@ -79,6 +94,7 @@ function tirage(){          //Fonction servant au tirage des couleurs
             SuiteCouleurLettre.push("J");
         }
     });
+    console.log()
 }
 
 function rejouer(){
@@ -89,7 +105,7 @@ function rejouer(){
 
 }
 
-function resultat(TabCouleurUtilisateurInput){
+function resultat(TabCouleurUtilisateurInput, indexID){
 
     let TabCouleurTirage = SuiteCouleurLettre;
     let TabCouleurUtilisateur = []
@@ -114,10 +130,13 @@ function resultat(TabCouleurUtilisateurInput){
         }
         
     });
+
+    
+    let return_id = ("Resultat"+toString(indexID))
     const rondContainer = document.getElementById('rondContainer');
 
     for(let i =0; i<TabCouleurResultats.length;i++){
-        const rond = document.createElement('div');
+        const rond = document.getElementById(return_id);
         rond.classList.add('circle');
         rond.style.backgroundColor = TabCouleurResultats[i];
         rondContainer.appendChild(rond);
