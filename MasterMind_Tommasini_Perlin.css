@@ -72,6 +72,23 @@ body{
     font-size: 22px;
     flex-basis: 8%;
     text-align: center;
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+}
+
+.boxitem4{
+    opacity: 1;
+    cursor: pointer;
+    background-color: #7971ea;
+    color: white;
+    margin: 1%;
+
+    flex-basis: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
 }
 
 .btn {
@@ -87,13 +104,20 @@ body{
     flex-basis: 50%;
 }
 
+.color-button {
+
+    width: 40px;
+    height: 20px;
+    flex-basis: 100%;
+}
+
 .btn_partie {
     display: inline-block;
     padding: 10px 20px;
     background-color: #007BFF;
     color: #fff;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 20px;
     transition: background-color 0.5s ease;
     text-align: center;
     display: flex;
