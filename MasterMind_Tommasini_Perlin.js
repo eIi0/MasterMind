@@ -1,51 +1,66 @@
 const SuiteCouleurLettre = []
 
 function SentInput(indexID){
-    let input_id = ("Text"+toString(indexID))
+    let str_indexID = indexID.toString()
+    let input_id = ("Text"+str_indexID)
     let CouleurUtilisateurInput = document.getElementById(input_id).value;
-    let TabCouleurUtilisateurInput;
+    let TabCouleurUtilisateurInput = [];
+    console.log(CouleurUtilisateurInput)
     for(let i=0; i<CouleurUtilisateurInput.length;i++){
-        TabCouleurUtilisateurInput[i].push(TabCouleurUtilisateurInput.substr(i,i+1))
+        TabCouleurUtilisateurInput.push(CouleurUtilisateurInput.substring(i,i+1))
     }
 
-    affichage(TabCouleurUtilisateurInput,indexID)
-    resultat(TabCouleurUtilisateurInput, indexID);
+    let TabCouleurUtilisateurInputUpperCase = [];
+    for(let i=0; i<TabCouleurUtilisateurInput.length; i++){             //Boucle sur le nombre de caractère
+        TabCouleurUtilisateurInputUpperCase.push(TabCouleurUtilisateurInput[i].toUpperCase())         //Correction lowercase ==> passage de minuscule a majuscule
+    }    
+
+    affichage(TabCouleurUtilisateurInputUpperCase,indexID)
+    // resultat(TabCouleurUtilisateurInput, indexID);
 }
 
 function affichage(TabCouleurUtilisateurInput,indexID){
+
+    console.log(TabCouleurUtilisateurInput)
+    console.log(indexID)
     
     const rondContainer = document.getElementById('rondContainer');
 
     let stylecolor = [];
 
-    TabCouleurUtilisateurInput.forEach(col => {                   //
-        if(col == 'R'){
+    for(let i=0; i<TabCouleurUtilisateurInput.length;i++){                  //
+        if(TabCouleurUtilisateurInput[i] == 'R'){
             stylecolor.push('red')
         }
-        if(col == 'O'){
+        if(TabCouleurUtilisateurInput[i] == 'O'){
             stylecolor.push('orange')
         }
-        if(col == 'J'){
+        if(TabCouleurUtilisateurInput[i] == 'J'){
             stylecolor.push('yellow')
         }
-        if(col == 'M'){
+        if(TabCouleurUtilisateurInput[i] == 'M'){
             stylecolor.push('brown')
         }
-        if(col == 'B'){
+        if(TabCouleurUtilisateurInput[i] == 'B'){
             stylecolor.push('blue')
         }
-        if(col == 'V'){
+        if(TabCouleurUtilisateurInput[i] == 'V'){
             stylecolor.push('green')
         }
-    });
+    }
+    console.log(stylecolor)
 
-    let return_id = ("Affichage"+toString(indexID))
+    
+    let str_indexID = indexID.toString()
+    let return_id = ("Affichage"+str_indexID)
+
+    
         
 
-    for (const color of stylecolor) {
+    for (let i = 0; i< stylecolor.length; i++) {
         const rond = document.getElementById(return_id);
         rond.classList.add('circle');
-        rond.style.backgroundColor = color;
+        rond.style.backgroundColor = stylecolor[i];
         rondContainer.appendChild(rond);
     }
 }
@@ -116,9 +131,7 @@ function resultat(TabCouleurUtilisateurInput, indexID){
     let TabCouleurTirage = SuiteCouleurLettre;
     let TabCouleurUtilisateur = []
 
-    for(let i=0; i<TabCouleurUtilisateurInput.length; i++){             //Boucle sur le nombre de caraactère
-        TabCouleurUtilisateur.push(TabCouleurUtilisateurInput[i].toUpperCase())         //Correction lowercase ==> passage de minuscule a majuscule
-    }                                                                               
+                                                                               
     
 
 
