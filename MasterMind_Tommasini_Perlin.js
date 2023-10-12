@@ -5,7 +5,6 @@ function SentInput(indexID){
     let input_id = ("Text"+str_indexID)
     let CouleurUtilisateurInput = document.getElementById(input_id).value;
     let TabCouleurUtilisateurInput = [];
-    console.log(CouleurUtilisateurInput)
     for(let i=0; i<CouleurUtilisateurInput.length;i++){
         TabCouleurUtilisateurInput.push(CouleurUtilisateurInput.substring(i,i+1))
     }
@@ -16,52 +15,48 @@ function SentInput(indexID){
     }    
 
     affichage(TabCouleurUtilisateurInputUpperCase,indexID)
-    // resultat(TabCouleurUtilisateurInput, indexID);
+    resultat(TabCouleurUtilisateurInputUpperCase, indexID);
 }
 
 function affichage(TabCouleurUtilisateurInput,indexID){
 
-    console.log(TabCouleurUtilisateurInput)
-    console.log(indexID)
-    
-    const rondContainer = document.getElementById('rondContainer');
+    // console.log(TabCouleurUtilisateurInput)
+    // console.log(indexID)
 
     let stylecolor = [];
 
-    for(let i=0; i<TabCouleurUtilisateurInput.length;i++){                  //
+    for(let i=0; i<TabCouleurUtilisateurInput.length;i++){
         if(TabCouleurUtilisateurInput[i] == 'R'){
             stylecolor.push('red')
         }
-        if(TabCouleurUtilisateurInput[i] == 'O'){
+        else if(TabCouleurUtilisateurInput[i] == 'O'){
             stylecolor.push('orange')
         }
-        if(TabCouleurUtilisateurInput[i] == 'J'){
+        else if(TabCouleurUtilisateurInput[i] == 'J'){
             stylecolor.push('yellow')
         }
-        if(TabCouleurUtilisateurInput[i] == 'M'){
+        else if(TabCouleurUtilisateurInput[i] == 'M'){
             stylecolor.push('brown')
         }
-        if(TabCouleurUtilisateurInput[i] == 'B'){
+        else if(TabCouleurUtilisateurInput[i] == 'B'){
             stylecolor.push('blue')
         }
-        if(TabCouleurUtilisateurInput[i] == 'V'){
+        else if(TabCouleurUtilisateurInput[i] == 'V'){
             stylecolor.push('green')
         }
+        else{
+            stylecolor.push('black')
+        }
     }
-    console.log(stylecolor)
-
     
     let str_indexID = indexID.toString()
-    let return_id = ("Affichage"+str_indexID)
-
-    
-        
+    let return_id_notfull = ("Affichage"+str_indexID)
 
     for (let i = 0; i< stylecolor.length; i++) {
-        const rond = document.getElementById(return_id);
-        rond.classList.add('circle');
+        let temp = i.toString()
+        let return_id_full = (return_id_notfull+"_"+temp)
+        const rond = document.getElementById(return_id_full);
         rond.style.backgroundColor = stylecolor[i];
-        rondContainer.appendChild(rond);
     }
 }
 
@@ -78,11 +73,8 @@ function tirage(){          //Fonction servant au tirage des couleurs
 
         La fonction Math.random() sera utilisé pour obtenir le tirage aléatoire
     */
-
-
             //Déclaration du tableau contenant les couleurs sosu forme de nombre
     let SuiteCouleurNB = []
-
 
     for(let i=0; i<4; i++){             //Boucle servant a l'affectation des 5 couleurs
         SuiteCouleurNB.push(Math.floor(Math.random() * 6))          //Gérération des couleurs suivant le tableau en tête de la fonction + affectation dans l'array
@@ -109,55 +101,73 @@ function tirage(){          //Fonction servant au tirage des couleurs
             SuiteCouleurLettre.push("J");
         }
     });
-    console.log()
+
+    console.log(SuiteCouleurLettre)
 }
 
 function rejouer(){
-    const rondContainer = document.getElementById('rondContainer');
-    rondContainer.innerHTML = '';
+
+    SuiteCouleurLettre.splice(0,4);
 
     tirage();
+    for(let i=1; i<10; i++){
+        for(let j=0; j<4; j++){
+            var str_indexID = i.toString()
+            var str_precisionID = j.toString()
 
+            let ResultatID = ("Resultat"+str_indexID+"_"+str_precisionID)
+            let AffichageID = ("Affichage"+str_indexID+"_"+str_precisionID)
+            console.log(1, ResultatID)
+            console.log(2, AffichageID)
+
+            document.getElementById(ResultatID).style.backgroundColor = "grey";
+            document.getElementById(AffichageID).style.backgroundColor = "grey";
+
+            // rondresultat;
+            // rondaffichage;
+
+            let input_id = ("Text"+str_indexID)
+            document.getElementById(input_id).value = "";
+        }
+    }
 }
-
-function jouer(){
-    tirage();
-}
-
 
 
 function resultat(TabCouleurUtilisateurInput, indexID){
 
+
     let TabCouleurTirage = SuiteCouleurLettre;
-    let TabCouleurUtilisateur = []
-
-                                                                               
-    
-
-
     let TabCouleurResultats = []
 
-    TabCouleurTirage.forEach((couleur, i) => {
-        if(TabCouleurUtilisateur[i] == couleur){
-            TabCouleurResultats[i]="black"
+    for(let i =0; i<TabCouleurUtilisateurInput.length;i++){
+        if(TabCouleurUtilisateurInput[i]==TabCouleurTirage[i]){
+            console.log("1")
+            TabCouleurResultats.push("black")
         }
-        else if((TabCouleurUtilisateur[0] == couleur)||(TabCouleurUtilisateur[1] == couleur)||(TabCouleurUtilisateur[2] == couleur)||(TabCouleurUtilisateur[3] == couleur)){
-            TabCouleurResultats[i]="grey"
+        else{
+            let ValueVerif = 0;
+            for (let v = 0; v < TabCouleurTirage.length; v++) {
+                if (TabCouleurUtilisateurInput[i] === TabCouleurTirage[v]) {
+                    ValueVerif +=1
+                }
+            }
+            if(ValueVerif>=1){
+                console.log("2")
+                TabCouleurResultats.push("grey")
+            }else{
+                console.log("3")
+                TabCouleurResultats.push("white")
+            }
         }
-        else if((TabCouleurUtilisateur[0] !== couleur )&&(TabCouleurUtilisateur[1] !== couleur )&&(TabCouleurUtilisateur[2] !== couleur )&&(TabCouleurUtilisateur[3] !== couleur )){
-            TabCouleurResultats[i]="white"
-        }
-        
-    });
-
+    }
     
-    let return_id = ("Resultat"+toString(indexID))
-    const rondContainer = document.getElementById('rondContainer');
+    let str_indexID = indexID.toString()
+    let return_id_notfull = ("Resultat"+str_indexID)
 
-    for(let i =0; i<TabCouleurResultats.length;i++){
-        const rond = document.getElementById(return_id);
-        rond.classList.add('circle');
+    for (let i = 0; i< TabCouleurResultats.length; i++) {
+        let tempo = i.toString()
+        let return_id_full = (return_id_notfull+"_"+tempo)
+        const rond = document.getElementById(return_id_full);
         rond.style.backgroundColor = TabCouleurResultats[i];
-        rondContainer.appendChild(rond);
     }
 }

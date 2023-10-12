@@ -156,3 +156,11 @@ body{
 .white{
     color: white;
 }
+
+
+.Rond {
+    width: 32px; /* Vous pouvez ajuster la taille en fonction de vos besoins */
+    height: 32px; /* Assurez-vous que width et height sont égaux pour obtenir un cercle */
+    border-radius: 50%; /* Cette propriété crée un bord arrondi équivalent à un cercle */
+    background-color: grey;
+  }

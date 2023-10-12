@@ -9,7 +9,7 @@
 </head>
 <body>
     <header class="header">Mini Mastermind</header>
-    <div class="boxitem4"><input class="btn_partie" type="button" value="Commencer une partie !!!" onclick="jouer()" /></div>
+    <div class="boxitem4"><input class="btn_partie" type="button" value="Commencer une partie !!!" onclick="rejouer()" /></div>
     <div class="boxitem">Propositions</div>
     <div class="boxitem">Affichage</div>
     <div class="boxitem">Réponses</div>
@@ -18,32 +18,155 @@
         <input type="text_format" id="Text1">
     </div>
     <div class="boxitem3" id="Input1"><input class="btn" type="button" value="Submit" onclick="SentInput(1)"></div>
-    <div class="boxitem" id="Affichage1"></div>
-    <div class="boxitem" id="Resultat1"></div>
 
-    <div class="boxitem2" id="Text2">  
-        <input type="text_format"></div>
+    <div class="boxitem" >
+        <div class="Rond" id="Affichage1_0"></div>
+        <div class="Rond" id="Affichage1_1"></div>
+        <div class="Rond" id="Affichage1_2"></div>
+        <div class="Rond" id="Affichage1_3"></div>
+    </div>
+    <div class="boxitem">
+        <div class="Rond" id="Resultat1_0"></div>
+        <div class="Rond" id="Resultat1_1"></div>
+        <div class="Rond" id="Resultat1_2"></div>
+        <div class="Rond" id="Resultat1_3"></div>
+    </div>
+
+    <div class="boxitem2" >  
+        <input type="text_format" id="Text2">
+    </div>
     <div class="boxitem3" id="Input2"><input class="btn" type="button" value="Submit" onclick="SentInput(2)"></div>
-    <div class="boxitem" id="Affichage2"></div>
-    <div class="boxitem" id="Resultat2"></div>
+    <div class="boxitem" >
+        <div class="Rond" id="Affichage2_0"></div>
+        <div class="Rond" id="Affichage2_1"></div>
+        <div class="Rond" id="Affichage2_2"></div>
+        <div class="Rond" id="Affichage2_3"></div>
+    </div>
+    <div class="boxitem">
+        <div class="Rond" id="Resultat2_0"></div>
+        <div class="Rond" id="Resultat2_1"></div>
+        <div class="Rond" id="Resultat2_2"></div>
+        <div class="Rond" id="Resultat2_3"></div>
+    </div>
 
-    <div class="boxitem2" id="Text3">  
-        <input type="text_format"></div>
+    <div class="boxitem2" >  
+        <input type="text_format" id="Text3">
+    </div>
     <div class="boxitem3" id="Input3"><input class="btn" type="button" value="Submit" onclick="SentInput(3)"></div>
-    <div class="boxitem" id="Affichage3"></div>
-    <div class="boxitem" id="Resultat3"></div>
+    <div class="boxitem" >
+        <div class="Rond" id="Affichage3_0"></div>
+        <div class="Rond" id="Affichage3_1"></div>
+        <div class="Rond" id="Affichage3_2"></div>
+        <div class="Rond" id="Affichage3_3"></div>
+    </div>
+    <div class="boxitem">
+        <div class="Rond" id="Resultat3_0"></div>
+        <div class="Rond" id="Resultat3_1"></div>
+        <div class="Rond" id="Resultat3_2"></div>
+        <div class="Rond" id="Resultat3_3"></div>
+    </div>
 
-    <div class="boxitem2" id="Text4">  
-        <input type="text_format"></div>
-    <div class="boxitem3" id="Input4"><input class="btn" type="button" value="Submit" onclick="SentInput(4)"></div>
-    <div class="boxitem" id="Affichage4"></div>
-    <div class="boxitem" id="Resultat4"></div>
+    <div class="boxitem2" >  
+        <input type="text_format" id="Text4">
+    </div>
+    <div class="boxitem3" id="Input3"><input class="btn" type="button" value="Submit" onclick="SentInput(4)"></div>
+    <div class="boxitem" >
+        <div class="Rond" id="Affichage4_0"></div>
+        <div class="Rond" id="Affichage4_1"></div>
+        <div class="Rond" id="Affichage4_2"></div>
+        <div class="Rond" id="Affichage4_3"></div>
+    </div>
+    <div class="boxitem">
+        <div class="Rond" id="Resultat4_0"></div>
+        <div class="Rond" id="Resultat4_1"></div>
+        <div class="Rond" id="Resultat4_2"></div>
+        <div class="Rond" id="Resultat4_3"></div>
+    </div>
 
-    <div class="boxitem2" id="Text5">  
-        <input type="text_format"></div>
+    <div class="boxitem2" >  
+        <input type="text_format" id="Text5">
+    </div>
     <div class="boxitem3" id="Input5"><input class="btn" type="button" value="Submit" onclick="SentInput(5)"></div>
-    <div class="boxitem" id="Affichage5"></div>
-    <div class="boxitem" id="Resultat5"></div>
+    <div class="boxitem" >
+        <div class="Rond" id="Affichage5_0"></div>
+        <div class="Rond" id="Affichage5_1"></div>
+        <div class="Rond" id="Affichage5_2"></div>
+        <div class="Rond" id="Affichage5_3"></div>
+    </div>
+    <div class="boxitem">
+        <div class="Rond" id="Resultat5_0"></div>
+        <div class="Rond" id="Resultat5_1"></div>
+        <div class="Rond" id="Resultat5_2"></div>
+        <div class="Rond" id="Resultat5_3"></div>
+    </div>
+
+    <div class="boxitem2" >  
+        <input type="text_format" id="Text6">
+    </div>
+    <div class="boxitem3" id="Input6"><input class="btn" type="button" value="Submit" onclick="SentInput(6)"></div>
+    <div class="boxitem" >
+        <div class="Rond" id="Affichage6_0"></div>
+        <div class="Rond" id="Affichage6_1"></div>
+        <div class="Rond" id="Affichage6_2"></div>
+        <div class="Rond" id="Affichage6_3"></div>
+    </div>
+    <div class="boxitem">
+        <div class="Rond" id="Resultat6_0"></div>
+        <div class="Rond" id="Resultat6_1"></div>
+        <div class="Rond" id="Resultat6_2"></div>
+        <div class="Rond" id="Resultat6_3"></div>
+    </div>
+
+    <div class="boxitem2" >  
+        <input type="text_format" id="Text7">
+    </div>
+    <div class="boxitem3" id="Input7"><input class="btn" type="button" value="Submit" onclick="SentInput(7)"></div>
+    <div class="boxitem" >
+        <div class="Rond" id="Affichage7_0"></div>
+        <div class="Rond" id="Affichage7_1"></div>
+        <div class="Rond" id="Affichage7_2"></div>
+        <div class="Rond" id="Affichage7_3"></div>
+    </div>
+    <div class="boxitem">
+        <div class="Rond" id="Resultat7_0"></div>
+        <div class="Rond" id="Resultat7_1"></div>
+        <div class="Rond" id="Resultat7_2"></div>
+        <div class="Rond" id="Resultat7_3"></div>
+    </div>
+
+    <div class="boxitem2" >  
+        <input type="text_format" id="Text8">
+    </div>
+    <div class="boxitem3" id="Input8"><input class="btn" type="button" value="Submit" onclick="SentInput(8)"></div>
+    <div class="boxitem" >
+        <div class="Rond" id="Affichage8_0"></div>
+        <div class="Rond" id="Affichage8_1"></div>
+        <div class="Rond" id="Affichage8_2"></div>
+        <div class="Rond" id="Affichage8_3"></div>
+    </div>
+    <div class="boxitem">
+        <div class="Rond" id="Resultat8_0"></div>
+        <div class="Rond" id="Resultat8_1"></div>
+        <div class="Rond" id="Resultat8_2"></div>
+        <div class="Rond" id="Resultat8_3"></div>
+    </div>
+
+    <div class="boxitem2" >  
+        <input type="text_format" id="Text9">
+    </div>
+    <div class="boxitem3" id="Input9"><input class="btn" type="button" value="Submit" onclick="SentInput(9)"></div>
+    <div class="boxitem" >
+        <div class="Rond" id="Affichage9_0"></div>
+        <div class="Rond" id="Affichage9_1"></div>
+        <div class="Rond" id="Affichage9_2"></div>
+        <div class="Rond" id="Affichage9_3"></div>
+    </div>
+    <div class="boxitem">
+        <div class="Rond" id="Resultat9_0"></div>
+        <div class="Rond" id="Resultat9_1"></div>
+        <div class="Rond" id="Resultat9_2"></div>
+        <div class="Rond" id="Resultat9_3"></div>
+    </div>
 
     <div class="boxitem4"><input class="btn_partie" type="button" value="Rejouer une partie !!!" onclick="rejouer()" /></div>    
     <footer class="footer"> Copyright Elio Tommasini - Clément Perlin</footer>
