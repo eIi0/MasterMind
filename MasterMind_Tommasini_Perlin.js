@@ -135,7 +135,6 @@ function rejouer(){
 
 function resultat(TabCouleurUtilisateurInput, indexID){
 
-
     let TabCouleurTirage = SuiteCouleurLettre;
     let TabCouleurResultats = []
 
@@ -169,5 +168,8 @@ function resultat(TabCouleurUtilisateurInput, indexID){
         let return_id_full = (return_id_notfull+"_"+tempo)
         const rond = document.getElementById(return_id_full);
         rond.style.backgroundColor = TabCouleurResultats[i];
+    }
+    if(TabCouleurResultats == ["black","black","black","black"]{
+       alert("Vous avez gagné");
     }
 }
