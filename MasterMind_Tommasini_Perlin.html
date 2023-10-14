@@ -9,7 +9,40 @@
 </head>
 <body>
     <header class="header">Mini Mastermind</header>
-    <div class="boxitem4"><input class="btn_partie" type="button" value="Commencer une partie !!!" onclick="rejouer()" /></div>
+    <div class="boxitem4">
+        <input class="btn_partie" type="button" value="Commencer une partie !!!" onclick="rejouer()" />
+        Score :
+        <div id="Score">0</div>
+    </div>
+
+    <div class="boxitem4">
+        <h2>Règles du MasterMind :</h2>
+        Le but est de découvrir la combinaison de couleurs en les renseignant dans les champs 'Propositions'. Les couleurs sont :
+        <div class="PetitRond" style="background-color: red;"> </div>
+        R 
+        <div class="PetitRond" style="background-color: brown;"> </div>
+        M 
+        <div class="PetitRond" style="background-color: orange;"> </div>
+        O 
+        <div class="PetitRond" style="background-color: yellow;"> </div>
+        J 
+        <div class="PetitRond" style="background-color: green;"> </div>
+        V 
+        <div class="PetitRond" style="background-color: blue;"> </div>
+        B - En cas de couleur inexistante, c'est un rond noir qui apparaitra:
+        <div class="PetitRond" style="background-color: black;"> </div>
+
+        La colonne Affichage, affiche votre proposition.<br>
+
+        Les réponses sont : <div class="PetitRond" style="background-color: black;"></div> réponse juste.
+        <div class="PetitRond" style="background-color: grey;"></div> couleur mal placée.
+        <div class="PetitRond" style="background-color: white;"></div> réponse incorrecte.
+
+        
+
+
+    </div>
+
     <div class="boxitem">Propositions</div>
     <div class="boxitem">Affichage</div>
     <div class="boxitem">Réponses</div>
@@ -167,8 +200,7 @@
         <div class="Rond" id="Resultat9_2"></div>
         <div class="Rond" id="Resultat9_3"></div>
     </div>
-
-    <div class="boxitem4"><input class="btn_partie" type="button" value="Rejouer une partie !!!" onclick="rejouer()" /></div>    
+     
     <footer class="footer"> Copyright Elio Tommasini - Clément Perlin</footer>
 </body>
 </html>

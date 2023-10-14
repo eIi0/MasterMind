@@ -126,41 +126,48 @@ body{
 }
 
 .red{
-    color: red;
+    background-color: red;
 }
 
 .yellow{
-    color : yellow
+    background-color : yellow
 }
 
 .green{
-    color:green;
+    background-color:green;
 }
 
 .blue{
-    color: blue;
+    background-color: blue;
 }
 
 .orange{
-    color: orange;
+    background-color: orange;
 }
 
 .brown{
-    color: brown;
+    background-color: brown;
 }
 
 .black{
-    color: black;
+    background-color: black;
 }
 
 .white{
-    color: white;
+    background-color: white;
 }
 
 
 .Rond {
     width: 32px; /* Vous pouvez ajuster la taille en fonction de vos besoins */
     height: 32px; /* Assurez-vous que width et height sont égaux pour obtenir un cercle */
+    border-radius: 50%; /* Cette propriété crée un bord arrondi équivalent à un cercle */
+    background-color: grey;
+}
+
+.PetitRond {
+    width: 16px; /* Vous pouvez ajuster la taille en fonction de vos besoins */
+    height: 16px; /* Assurez-vous que width et height sont égaux pour obtenir un cercle */
     border-radius: 50%; /* Cette propriété crée un bord arrondi équivalent à un cercle */
     background-color: grey;
   }

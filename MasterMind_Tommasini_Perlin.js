@@ -1,4 +1,6 @@
-const SuiteCouleurLettre = []
+const SuiteCouleurLettre = [];
+var score = 0;
+
 
 function SentInput(indexID){
     let str_indexID = indexID.toString()
@@ -117,8 +119,6 @@ function rejouer(){
 
             let ResultatID = ("Resultat"+str_indexID+"_"+str_precisionID)
             let AffichageID = ("Affichage"+str_indexID+"_"+str_precisionID)
-            console.log(1, ResultatID)
-            console.log(2, AffichageID)
 
             document.getElementById(ResultatID).style.backgroundColor = "grey";
             document.getElementById(AffichageID).style.backgroundColor = "grey";
@@ -137,11 +137,12 @@ function resultat(TabCouleurUtilisateurInput, indexID){
 
     let TabCouleurTirage = SuiteCouleurLettre;
     let TabCouleurResultats = []
+    let Counter = 0;
 
     for(let i =0; i<TabCouleurUtilisateurInput.length;i++){
         if(TabCouleurUtilisateurInput[i]==TabCouleurTirage[i]){
-            console.log("1")
             TabCouleurResultats.push("black")
+            Counter+=1;
         }
         else{
             let ValueVerif = 0;
@@ -151,10 +152,8 @@ function resultat(TabCouleurUtilisateurInput, indexID){
                 }
             }
             if(ValueVerif>=1){
-                console.log("2")
                 TabCouleurResultats.push("grey")
             }else{
-                console.log("3")
                 TabCouleurResultats.push("white")
             }
         }
@@ -169,7 +168,16 @@ function resultat(TabCouleurUtilisateurInput, indexID){
         const rond = document.getElementById(return_id_full);
         rond.style.backgroundColor = TabCouleurResultats[i];
     }
-    if(TabCouleurResultats == ["black","black","black","black"]{
-       alert("Vous avez gagné");
+    
+    if(Counter==4){
+        alerteVictoire();
+        score+=1;
     }
+
+    document.getElementById("Score").innerHTML= score;
+
+}
+
+function alerteVictoire(){
+    alert("Vous avez gagné, pour rejouer cliquez sur ''Commencer une partie''");
 }
