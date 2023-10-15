@@ -73,8 +73,8 @@ body{
     flex-basis: 8%;
     text-align: center;
     display: flex;
-    justify-content: center; /* Centre horizontalement */
-    align-items: center; /* Centre verticalement */
+    justify-content: center;
+    align-items: center;
 }
 
 .boxitem4{
@@ -87,8 +87,18 @@ body{
     flex-basis: 100%;
     text-align: center;
     display: flex;
-    justify-content: center; /* Centre horizontalement */
-    align-items: center; /* Centre verticalement */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ajoutez ces styles pour afficher les ronds en ligne */
+.boxitem .Rond {
+    display: inline-block; /* Afficher les ronds en ligne */
+    margin: 0 5px; /* Ajouter une marge horizontale entre les ronds */
+    width: 32px; /* Vous pouvez ajuster la taille en fonction de vos besoins */
+    height: 32px; /* Assurez-vous que width et height sont égaux pour obtenir des cercles */
+    border-radius: 50%; /* Crée un bord arrondi pour obtenir des cercles */
+    background-color: grey;
 }
 
 .btn {
