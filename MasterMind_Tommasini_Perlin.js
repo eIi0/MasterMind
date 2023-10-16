@@ -1,82 +1,84 @@
+/*
+        COULEURS normalisées :
+            Rouge - R 
+            Orange - O 
+            Marron - M 
+            Bleu - B 
+            Vert - V
+            Jaune - j 
+*/
+
 const SuiteCouleurLettre = [];
 var score = 0;
 
 
-function SentInput(indexID){
-    let str_indexID = indexID.toString()
-    let input_id = ("Text"+str_indexID)
-    let CouleurUtilisateurInput = document.getElementById(input_id).value;
-    let TabCouleurUtilisateurInput = [];
-    for(let i=0; i<CouleurUtilisateurInput.length;i++){
-        TabCouleurUtilisateurInput.push(CouleurUtilisateurInput.substring(i,i+1))
-    }
+function SentInput(indexID){                //La fonction sendInput sert a la récupération des couleurs et l'appel aux fonctions
 
-    let TabCouleurUtilisateurInputUpperCase = [];
+    let str_indexID = indexID.toString()        //Conversion de type de la variable index (int to str)
+    let input_id = ("Text"+str_indexID)                 //création du string relatif a l'id de l'input HTML des couleurs 
+    let CouleurUtilisateurInput = document.getElementById(input_id).value;      // recupération des couleurs
+
+    //decomposition des couleurs renseignés par l'utilisateur, elle passe de string "abcd" a un array ["a"],["b"],["c"],["d"]
+    let TabCouleurUtilisateurInput = [];        
+    for(let i=0; i<CouleurUtilisateurInput.length;i++){                         //boucle sur la longueur de l'input (en principe toujours égale a 4)
+        TabCouleurUtilisateurInput.push(CouleurUtilisateurInput.substring(i,i+1))               //décomposition du string CouleurUtilisateurInput caractère par caractère,
+    }                                                                                           //afin d'être ajouté a l'array TabCouleurUtilisateurInput
+
+    //correction des minuscules.
+    //Pour la suite du code nous utiliserons des caractères normalisés en majuscule, si l'user a rentré des caractères en minuscule, il faut les convertir
+    let TabCouleurUtilisateurInputUpperCase = [];       
     for(let i=0; i<TabCouleurUtilisateurInput.length; i++){             //Boucle sur le nombre de caractère
-        TabCouleurUtilisateurInputUpperCase.push(TabCouleurUtilisateurInput[i].toUpperCase())         //Correction lowercase ==> passage de minuscule a majuscule
+        TabCouleurUtilisateurInputUpperCase.push(TabCouleurUtilisateurInput[i].toUpperCase())         //Correction lowercase to uppercase ==> passage de minuscule a majuscule
     }    
 
-    affichage(TabCouleurUtilisateurInputUpperCase,indexID)
-    resultat(TabCouleurUtilisateurInputUpperCase, indexID);
+    affichage(TabCouleurUtilisateurInputUpperCase,indexID);         //appel de la fonction affichage
+    resultat(TabCouleurUtilisateurInputUpperCase, indexID);         //appel de la fonction resultat
 }
 
-function affichage(TabCouleurUtilisateurInput,indexID){
+function affichage(TabCouleurUtilisateurInput,indexID){         //fonction servant a l'affichage des couleurs rentrées par l'user
+    
+    let stylecolor = [];            //création de l'array servant a stocker les valeurs de couleurs, ce tableau sera réutilisé pour l'affichage html
+    for(let i=0; i<TabCouleurUtilisateurInput.length;i++){      //boucle sur la longueur de l'input user
 
-    // console.log(TabCouleurUtilisateurInput)
-    // console.log(indexID)
-
-    let stylecolor = [];
-
-    for(let i=0; i<TabCouleurUtilisateurInput.length;i++){
-        if(TabCouleurUtilisateurInput[i] == 'R'){
+        if(TabCouleurUtilisateurInput[i] == 'R'){          // si la couleur est rouge "R", on ajoute "red" a l'array stylecolor
             stylecolor.push('red')
         }
-        else if(TabCouleurUtilisateurInput[i] == 'O'){
+        else if(TabCouleurUtilisateurInput[i] == 'O'){          // si la couleur est orange "O", on ajoute "orange" a l'array stylecolor
             stylecolor.push('orange')
         }
-        else if(TabCouleurUtilisateurInput[i] == 'J'){
+        else if(TabCouleurUtilisateurInput[i] == 'J'){          // si la couleur est jaune "J", on ajoute "yellow" a l'array stylecolor
             stylecolor.push('yellow')
         }
-        else if(TabCouleurUtilisateurInput[i] == 'M'){
+        else if(TabCouleurUtilisateurInput[i] == 'M'){          // si la couleur est marron "M", on ajoute "brown" a l'array stylecolor
             stylecolor.push('brown')
         }
-        else if(TabCouleurUtilisateurInput[i] == 'B'){
+        else if(TabCouleurUtilisateurInput[i] == 'B'){          // si la couleur est bleu "B", on ajoute "blue" a l'array stylecolor
             stylecolor.push('blue')
         }
-        else if(TabCouleurUtilisateurInput[i] == 'V'){
+        else if(TabCouleurUtilisateurInput[i] == 'V'){          // si la couleur est vert "V", on ajoute "green" a l'array stylecolor
             stylecolor.push('green')
         }
-        else{
-            stylecolor.push('black')
+        else{                                   //si le caractère renseigné n'est pas un de ceux précisé plus haut, la couleur affichée sera noir
+            stylecolor.push('black')            //donc on ajoute "black" a l'array stylecolor
         }
     }
     
-    let str_indexID = indexID.toString()
-    let return_id_notfull = ("Affichage"+str_indexID)
+    let str_indexID = indexID.toString()                        //Conversion de type de la variable index (int to str)
+    let return_id_notfull = ("Affichage"+str_indexID)           //création du string (non complet) relatif a l'id de la div HTML affichant la couleur, AffichageX
 
-    for (let i = 0; i< stylecolor.length; i++) {
-        let temp = i.toString()
-        let return_id_full = (return_id_notfull+"_"+temp)
-        const rond = document.getElementById(return_id_full);
-        rond.style.backgroundColor = stylecolor[i];
+    for (let i = 0; i< stylecolor.length; i++) {                //boucle sur la longueur de l'input (en principe toujours égale a 4)
+        let index_str = i.toString()                                //conversion de l'index en string
+        let return_id_full = (return_id_notfull+"_"+index_str)      //création du string (complet) relatif a l'id de la div HTML affichant la couleur, AffichageX_Y
+        const rond = document.getElementById(return_id_full);       //variable contenant les informations HTML des ronds affichant les couleurs renseignés par l'user
+        rond.style.backgroundColor = stylecolor[i];                 //modification de la couleur du rond, en utilisant la couleur renseigné dans stylecolor (index adapté)
     }
 }
 
 function tirage(){          //Fonction servant au tirage des couleurs 
 
-    /*
-        COULEURS :
-            Rouge - R = 0
-            Orange - O = 1
-            Marron - M = 2
-            Bleu - B = 3
-            Vert - V = 4
-            Jaune - j = 5  
-
-        La fonction Math.random() sera utilisé pour obtenir le tirage aléatoire
-    */
-            //Déclaration du tableau contenant les couleurs sosu forme de nombre
-    let SuiteCouleurNB = []
+    //La fonction Math.random() sera utilisé pour obtenir le tirage aléatoire
+       
+    let SuiteCouleurNB = []                 //Déclaration du tableau contenant les couleurs sosu forme de nombre
 
     for(let i=0; i<4; i++){             //Boucle servant a l'affectation des 5 couleurs
         SuiteCouleurNB.push(Math.floor(Math.random() * 6))          //Gérération des couleurs suivant le tableau en tête de la fonction + affectation dans l'array
