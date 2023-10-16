@@ -83,8 +83,19 @@ body{
     background-color: #7971ea;
     color: white;
     margin: 1%;
-
     flex-basis: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.boxitem5{
+    opacity: 1;
+    cursor: pointer;
+    background-color: #7971ea;
+    color: white;
+    margin: 1%;
+    flex-basis: 75%;
     text-align: center;
     display: flex;
     justify-content: center;
