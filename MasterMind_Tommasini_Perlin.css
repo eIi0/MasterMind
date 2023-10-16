@@ -46,7 +46,7 @@ body{
     cursor: pointer;
     background-color: #4e2280;
     color: white;
-    margin: 1%;
+    margin: 0.2% 1%;
     font-size: 22px;
     flex-basis: 31%;
     text-align: center;
@@ -57,7 +57,7 @@ body{
     cursor: pointer;
     background-color: #4e2280;
     color: white;
-    margin: 1%;
+    margin: 0.2% 1%;
     font-size: 22px;
     flex-basis: 21%;
     text-align: center;
@@ -68,7 +68,7 @@ body{
     cursor: pointer;
     background-color: #4e2280;
     color: white;
-    margin: 1%;
+    margin: 0.2% 1%;
     font-size: 22px;
     flex-basis: 8%;
     text-align: center;
@@ -82,7 +82,7 @@ body{
     cursor: pointer;
     background-color: #7971ea;
     color: white;
-    margin: 1%;
+    margin: 0.2% 1%;
     flex-basis: 100%;
     text-align: center;
     display: flex;
@@ -94,7 +94,7 @@ body{
     cursor: pointer;
     background-color: #7971ea;
     color: white;
-    margin: 1%;
+    margin: 0.2% 1%;
     flex-basis: 75%;
     text-align: center;
     display: flex;
