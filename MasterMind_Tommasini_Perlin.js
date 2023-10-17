@@ -31,31 +31,49 @@ function SentInput(indexID){                //La fonction sendInput sert a la r�
         TabCouleurUtilisateurInputUpperCase.push(TabCouleurUtilisateurInput[i].toUpperCase())         //Correction lowercase to uppercase ==> passage de minuscule a majuscule
     }    
 
-    affichage(TabCouleurUtilisateurInputUpperCase,indexID);         //appel de la fonction affichage
+    //affichage(TabCouleurUtilisateurInputUpperCase,indexID);         //appel de la fonction affichage
     resultat(TabCouleurUtilisateurInputUpperCase, indexID);         //appel de la fonction resultat
 }
 
-function affichage(TabCouleurUtilisateurInput,indexID){         //fonction servant a l'affichage des couleurs rentrées par l'user
+
+function affichage(CouleurUtilisateurInput,indexID){         //fonction servant a l'affichage des couleurs rentrées par l'user
+
+
+    //decomposition des couleurs renseignés par l'utilisateur, elle passe de string "abcd" a un array ["a"],["b"],["c"],["d"]
+    let TabCouleurUtilisateurInput = [];        
+    for(let i=0; i<CouleurUtilisateurInput.length;i++){                         //boucle sur la longueur de l'input (en principe toujours égale a 4)
+        TabCouleurUtilisateurInput.push(CouleurUtilisateurInput.substring(i,i+1))               //décomposition du string CouleurUtilisateurInput caractère par caractère,
+    }                                                                                           //afin d'être ajouté a l'array TabCouleurUtilisateurInput
+
+    //correction des minuscules.
+    //Pour la suite du code nous utiliserons des caractères normalisés en majuscule, si l'user a rentré des caractères en minuscule, il faut les convertir
+    let TabCouleurUtilisateurInputUpperCase = [];       
+    for(let i=0; i<TabCouleurUtilisateurInput.length; i++){             //Boucle sur le nombre de caractère
+        TabCouleurUtilisateurInputUpperCase.push(TabCouleurUtilisateurInput[i].toUpperCase())         //Correction lowercase to uppercase ==> passage de minuscule a majuscule
+    }
+
+
+
     
     let stylecolor = [];            //création de l'array servant a stocker les valeurs de couleurs, ce tableau sera réutilisé pour l'affichage html
-    for(let i=0; i<TabCouleurUtilisateurInput.length;i++){      //boucle sur la longueur de l'input user
+    for(let i=0; i<TabCouleurUtilisateurInputUpperCase.length;i++){      //boucle sur la longueur de l'input user
 
-        if(TabCouleurUtilisateurInput[i] == 'R'){          // si la couleur est rouge "R", on ajoute "red" a l'array stylecolor
+        if(TabCouleurUtilisateurInputUpperCase[i] == 'R'){          // si la couleur est rouge "R", on ajoute "red" a l'array stylecolor
             stylecolor.push('red')
         }
-        else if(TabCouleurUtilisateurInput[i] == 'O'){          // si la couleur est orange "O", on ajoute "orange" a l'array stylecolor
+        else if(TabCouleurUtilisateurInputUpperCase[i] == 'O'){          // si la couleur est orange "O", on ajoute "orange" a l'array stylecolor
             stylecolor.push('orange')
         }
-        else if(TabCouleurUtilisateurInput[i] == 'J'){          // si la couleur est jaune "J", on ajoute "yellow" a l'array stylecolor
+        else if(TabCouleurUtilisateurInputUpperCase[i] == 'J'){          // si la couleur est jaune "J", on ajoute "yellow" a l'array stylecolor
             stylecolor.push('yellow')
         }
-        else if(TabCouleurUtilisateurInput[i] == 'M'){          // si la couleur est marron "M", on ajoute "brown" a l'array stylecolor
+        else if(TabCouleurUtilisateurInputUpperCase[i] == 'M'){          // si la couleur est marron "M", on ajoute "brown" a l'array stylecolor
             stylecolor.push('brown')
         }
-        else if(TabCouleurUtilisateurInput[i] == 'B'){          // si la couleur est bleu "B", on ajoute "blue" a l'array stylecolor
+        else if(TabCouleurUtilisateurInputUpperCase[i] == 'B'){          // si la couleur est bleu "B", on ajoute "blue" a l'array stylecolor
             stylecolor.push('blue')
         }
-        else if(TabCouleurUtilisateurInput[i] == 'V'){          // si la couleur est vert "V", on ajoute "green" a l'array stylecolor
+        else if(TabCouleurUtilisateurInputUpperCase[i] == 'V'){          // si la couleur est vert "V", on ajoute "green" a l'array stylecolor
             stylecolor.push('green')
         }
         else{                                   //si le caractère renseigné n'est pas un de ceux précisé plus haut, la couleur affichée sera noir
@@ -182,4 +200,16 @@ function resultat(TabCouleurUtilisateurInput, indexID){
 
 function alerteVictoire(){
     alert("Vous avez gagné, pour rejouer cliquez sur ''Commencer une partie''");
+}
+
+
+for (let i = 1; i <= 9; i++) {
+    const inputElement = document.getElementById("Text" + i);
+
+    inputElement.addEventListener("input", function (event) {
+        const inputValue = event.target.value;
+        affichage(inputValue, i)
+        //console.log("Texte entré dans le champ " + i + ": " + inputValue);
+
+    });
 }
