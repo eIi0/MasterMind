@@ -1,35 +1,49 @@
 body, h1, h2, h3, p {
     margin: 0;
     padding: 0;
+    background-color: #c4f8ef;
 }
-.header{
-    opacity: 1;
-    cursor: pointer;
-    background-color: #7971ea;
-    border: 5px #443ea0;
-    padding: 30px;
-    color: white;
-    font-size: 7vw;
+.header {
+    
+    color: red;
+    font-family: Arial, Helvetica, sans-serif;
     text-align: center;
+    padding: 30px;
+    font-size: 7vw;
+    border: 5px solid red;
+    border-radius: 50px;
+    animation: changeColor 12s infinite, changeColorText 12s infinite;
+    background-color: #c4f8ef;
+    transition: background-color 0.5s, opacity 0.5s;
+    cursor: pointer;
+}
+
+.header:hover {
+    background-color: #ffbdfd;
 }
 
 .header, .footer{
     flex-basis: 100%;
 }
 
-.hero {
+/* .hero {
     text-align: center;
     padding: 10px 0;
-    background-color: #444;
+    background-color: #000000;
     color: #fff;
-}
+} */
 .footer{
-    background-color: #7971ea;
+    background-color: #c4f8ef;
+    transition: background-color 0.5s, opacity 0.5s;
+    cursor: pointer;
     text-align: center;
     padding: 15px;
-    color: rgb(255, 255, 255);
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
 }
-
+.footer:hover {
+    background-color: #ffbdfd;
+}
 body{
     display: flex;
     flex-wrap: wrap;
@@ -41,81 +55,182 @@ body{
 }
 
 
-.boxitem{
+.boxitem {
     opacity: 1;
-    cursor: pointer;
-    background-color: #4e2280;
-    color: white;
-    margin: 0.2% 1%;
-    font-size: 22px;
-    flex-basis: 31%;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0% 0%;
+    font-size: 40px;
+    flex-basis: 33.2%;
     text-align: center;
+    border: 1px solid red;
+    animation: changeColor 12s infinite;
+    cursor: pointer;
+    background-color: #c4f8ef;
+    transition: background-color 0.5s, opacity 0.5s;
+    cursor: pointer;
 }
+.boxitem:hover {
+    background-color: #ffbdfd;
+}
+
 
 .boxitem2{
     opacity: 1;
-    cursor: pointer;
-    background-color: #4e2280;
-    color: white;
-    margin: 0.2% 1%;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0% 0%;
     font-size: 22px;
-    flex-basis: 21%;
+    flex-basis: 25%;
     text-align: center;
+    border: 1px solid red;
+    animation: changeColor 12s infinite;
+    cursor: pointer;
+    background-color: #c4f8ef;
+    transition: background-color 0.5s, opacity 0.5s;
+    cursor: pointer;
+}
+.boxitem2:hover {
+    background-color: #ffbdfd;
 }
 
 .boxitem3{
     opacity: 1;
-    cursor: pointer;
-    background-color: #4e2280;
-    color: white;
-    margin: 0.2% 1%;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0% 0%;
     font-size: 22px;
     flex-basis: 8%;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 1px solid red;
+    animation: changeColor 12s infinite;
+    cursor: pointer;
+    background-color: #c4f8ef;
+    transition: background-color 0.5s, opacity 0.5s;
+    cursor: pointer;
+}
+.boxitem3:hover {
+    background-color: #ffbdfd;
 }
 
 .boxitem4{
     opacity: 1;
-    cursor: pointer;
-    background-color: #7971ea;
-    color: white;
-    margin: 0.2% 1%;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 50px;
+    margin: 0% 0%;
     flex-basis: 100%;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    background-color: #c4f8ef;
+    transition: background-color 0.5s, opacity 0.5s;
+    cursor: pointer;
 }
+.boxitem4:hover {
+    background-color: #ffbdfd;
+}
+
+
 .boxitem5{
     opacity: 1;
+    font-weight: bold;
     cursor: pointer;
-    background-color: #7971ea;
-    color: white;
-    margin: 0.2% 1%;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0% 0%;
     flex-basis: 75%;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #ffbdfd;
+    border-radius: 50px;
 }
+
+.boxitem6 {
+    opacity: 1;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0% 0%;
+    font-size: 22px;
+    flex-basis: 33.19%;
+    text-align: center;
+    border: 1px solid red;
+    animation: changeColor 12s infinite, changeColorText 12s infinite;
+    cursor: pointer;
+    background-color: #c4f8ef;
+    transition: background-color 0.5s, opacity 0.5s;
+    cursor: pointer;
+}
+.boxitem6:hover {
+    background-color: #ffbdfd;
+}
+
+.boxitem7{
+    opacity: 1;
+    font-weight: bold;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0% 0%;
+    font-size: 22px;
+    flex-basis: 25%;
+    text-align: center;
+    background-color: #ffbdfd;
+    border-radius: 50px;
+}
+
+.boxitem8{
+    opacity: 1;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    height: 50px;
+    margin: 0% 0%;
+    flex-basis: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: #c4f8ef;
+    transition: background-color 0.5s, opacity 0.5s;
+    cursor: pointer;
+}
+.boxitem8:hover {
+    background-color: #ffbdfd;
+}
+
+
 
 /* Ajoutez ces styles pour afficher les ronds en ligne */
 .boxitem .Rond {
     display: inline-block; /* Afficher les ronds en ligne */
-    margin: 0 5px; /* Ajouter une marge horizontale entre les ronds */
+    margin: 0 10px; /* Ajouter une marge horizontale entre les ronds */
     width: 32px; /* Vous pouvez ajuster la taille en fonction de vos besoins */
     height: 32px; /* Assurez-vous que width et height sont égaux pour obtenir des cercles */
     border-radius: 50%; /* Crée un bord arrondi pour obtenir des cercles */
     background-color: grey;
+    transition: background-color 0.5s, opacity 0.5s;
+    cursor: pointer;
 }
+
+.boxitem .Rond:hover {
+    background-color: white;
+}
+
+
 
 .btn {
     display: inline-block;
-    background-color: #00d9ff;
-    color: #fff;
+    background-color: red;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
     transition: background-color 0.5s ease;
     text-align: center;
@@ -123,7 +238,9 @@ body{
     align-items: center;
     justify-content: center;
     flex-basis: 50%;
+    animation: changeColorFond 12s infinite;
 }
+
 
 .color-button {
 
@@ -135,8 +252,9 @@ body{
 .btn_partie {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #007BFF;
-    color: #fff;
+    background-color: #ffbdfd;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
     border-radius: 20px;
     transition: background-color 0.5s ease;
@@ -144,6 +262,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    animation: changeColorFond 12s infinite;
 }
 
 .red{
@@ -192,3 +311,81 @@ body{
     border-radius: 50%; /* Cette propriété crée un bord arrondi équivalent à un cercle */
     background-color: grey;
   }
+
+@keyframes changeColor {
+    0% {
+    border-color: red;
+    }
+    16.67% {
+    border-color: brown;
+    }
+    33.34% {
+    border-color: orange;
+    }
+    50% {
+    border-color: yellow;
+    }
+    66.67% {
+    border-color: green;
+    }
+    83.34% {
+    border-color: blue;
+    }
+    100% {
+    border-color: red;
+    }
+        
+    
+}
+
+@keyframes changeColorText {
+    0% {
+    color: red;
+    }
+    16.67% {
+    color: brown;
+    }
+    33.34% {
+    color: orange;
+    }
+    50% {
+    color: yellow;
+    }
+    66.67% {
+    color: green;
+    }
+    83.34% {
+    color: blue;
+    }
+    100% {
+    color: red;
+    }
+        
+    
+}
+
+@keyframes changeColorFond {
+    0% {
+    background-color: red;
+    }
+    16.67% {
+    background-color: brown;
+    }
+    33.34% {
+    background-color: orange;
+    }
+    50% {
+    background-color: yellow;
+    }
+    66.67% {
+    background-color: green;
+    }
+    83.34% {
+    background-color: blue;
+    }
+    100% {
+    background-color: red;
+    }
+        
+    
+}
