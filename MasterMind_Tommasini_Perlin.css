@@ -1,258 +1,225 @@
+/* Réinitialise les marges, les rembourrages et définit la couleur d'arrière-plan pour les éléments de base */
 body, h1, h2, h3, p {
     margin: 0;
     padding: 0;
     background-color: #c4f8ef;
 }
+
+/* Styles pour l'en-tête */
 .header {
-    
-    color: red;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    padding: 30px;
-    font-size: 7vw;
-    border: 5px solid red;
-    border-radius: 50px;
-    animation: changeColor 12s infinite, changeColorText 12s infinite;
-    background-color: #c4f8ef;
-    transition: background-color 0.5s, opacity 0.5s;
-    cursor: pointer;
+    color: red; /* Couleur du texte */
+    font-family: Arial, Helvetica, sans-serif; /* Police */
+    text-align: center; /* Centre le texte horizontalement */
+    padding: 30px; /* Espace intérieur autour de l'en-tête */
+    font-size: 7vw; /* Taille de la police relative à la largeur de la vue */
+    border: 5px solid red; /* Bordure rouge de 5px */
+    border-radius: 50px; /* Rayon de bordure pour arrondir les coins */
+    animation: changeColor 12s infinite, changeColorText 12s infinite; /* Animation de couleur */
+    background-color: #c4f8ef; /* Couleur d'arrière-plan */
+    transition: background-color 0.5s, opacity 0.5s; /* Effet de transition */
+    cursor: pointer; /* Curseur change au survol */
 }
 
+/* Lorsque l'en-tête est survolé, la couleur de fond change */
 .header:hover {
     background-color: #ffbdfd;
 }
 
-.header, .footer{
+/* Les éléments avec la classe .header et .footer ont une largeur flexible de 100% */
+.header, .footer {
     flex-basis: 100%;
 }
 
-/* .hero {
-    text-align: center;
-    padding: 10px 0;
-    background-color: #000000;
-    color: #fff;
-} */
-.footer{
-    background-color: #c4f8ef;
-    transition: background-color 0.5s, opacity 0.5s;
-    cursor: pointer;
-    text-align: center;
-    padding: 15px;
-    color: black;
-    font-family: Arial, Helvetica, sans-serif;
+/* Styles pour le pied de page */
+.footer {
+    background-color: #c4f8ef; /* Couleur d'arrière-plan */
+    text-align: center; /* Centre le texte horizontalement */
+    padding: 15px; /* Espace intérieur autour du pied de page */
+    color: black; /* Couleur du texte */
+    font-family: Arial, Helvetica, sans-serif; /* Police */
 }
-.footer:hover {
-    background-color: #ffbdfd;
-}
-body{
+
+/* Le corps de la page utilise Flexbox pour la mise en page */
+body {
     display: flex;
     flex-wrap: wrap;
 }
 
-.Proposition{
+/* Les éléments avec la classe .Proposition utilisent Flexbox pour la mise en page */
+.Proposition {
     display: flex;
     flex-wrap: wrap;
 }
 
-
+/* Styles pour les éléments avec la classe .boxitem */
 .boxitem {
     opacity: 1;
-    color: black;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0% 0%;
-    font-size: 40px;
-    flex-basis: 33.2%;
-    text-align: center;
-    border: 1px solid red;
-    animation: changeColor 12s infinite;
-    cursor: pointer;
-    background-color: #c4f8ef;
-    transition: background-color 0.5s, opacity 0.5s;
-    cursor: pointer;
-}
-.boxitem:hover {
-    background-color: #ffbdfd;
+    color: black; /* Couleur du texte */
+    font-family: Arial, Helvetica, sans-serif; /* Police */
+    margin: 0% 0%; /* Marge */
+    font-size: 40px; /* Taille de la police */
+    flex-basis: 33.2%; /* Largeur flexible */
+    text-align: center; /* Centre le texte horizontalement */
+    border: 1px solid #d3d3d3; /* Bordure */
+    cursor: pointer; /* Curseur au survol */
+    background-color: #c4f8ef; /* Couleur d'arrière-plan */
 }
 
-
-.boxitem2{
-    opacity: 1;
-    color: black;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0% 0%;
-    font-size: 22px;
-    flex-basis: 25%;
-    text-align: center;
-    border: 1px solid red;
-    animation: changeColor 12s infinite;
-    cursor: pointer;
-    background-color: #c4f8ef;
-    transition: background-color 0.5s, opacity 0.5s;
-    cursor: pointer;
-}
-.boxitem2:hover {
-    background-color: #ffbdfd;
+/* Styles pour .boxitem2 */
+.boxitem2 {
+    opacity: 1; /* Opacité de 1 signifie complètement visible */
+    margin: 0% 0%; /* Marge nulle en haut et en bas */
+    font-size: 22px; /* Taille de la police */
+    flex-basis: 25%; /* Largeur flexible de 25% de l'espace disponible */
+    text-align: center; /* Centre le texte horizontalement */
+    justify-content: center; /* Centre le contenu horizontalement (Flexbox) */
+    align-items: center; /* Centre le contenu verticalement (Flexbox) */
+    vertical-align: center; /* L'attribut vertical-align n'existe pas en CSS, peut être supprimé */
+    border: 1px solid #d3d3d3; /* Bordure de 1 pixel solide avec couleur #d3d3d3 */
+    cursor: pointer; /* Curseur change au survol */
+    background-color: #c4f8ef; /* Couleur d'arrière-plan */
 }
 
-.boxitem3{
-    opacity: 1;
-    color: black;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0% 0%;
-    font-size: 22px;
-    flex-basis: 8%;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid red;
-    animation: changeColor 12s infinite;
-    cursor: pointer;
-    background-color: #c4f8ef;
-    transition: background-color 0.5s, opacity 0.5s;
-    cursor: pointer;
-}
-.boxitem3:hover {
-    background-color: #ffbdfd;
+/* Styles pour .boxitem3 */
+.boxitem3 {
+    opacity: 1; /* Opacité de 1 signifie complètement visible */
+    color: black; /* Couleur du texte */
+    font-family: Arial, Helvetica, sans-serif; /* Police */
+    margin: 0% 0%; /* Marge nulle en haut et en bas */
+    font-size: 22px; /* Taille de la police */
+    flex-basis: 8%; /* Largeur flexible de 8% de l'espace disponible */
+    text-align: center; /* Centre le texte horizontalement */
+    display: flex; /* Utilise Flexbox pour la mise en page */
+    justify-content: center; /* Centre le contenu horizontalement (Flexbox) */
+    align-items: center; /* Centre le contenu verticalement (Flexbox) */
+    border: 1px solid #d3d3d3; /* Bordure de 1 pixel solide avec couleur #d3d3d3 */
+    cursor: pointer; /* Curseur change au survol */
+    background-color: #c4f8ef; /* Couleur d'arrière-plan */
 }
 
-.boxitem4{
-    opacity: 1;
-    color: black;
-    font-family: Arial, Helvetica, sans-serif;
-    height: 50px;
-    margin: 0% 0%;
-    flex-basis: 100%;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    background-color: #c4f8ef;
-    transition: background-color 0.5s, opacity 0.5s;
-    cursor: pointer;
-}
-.boxitem4:hover {
-    background-color: #ffbdfd;
+/* Styles pour .boxitem4 */
+.boxitem4 {
+    opacity: 1; /* Opacité de 1 signifie complètement visible */
+    color: black; /* Couleur du texte */
+    font-family: Arial, Helvetica, sans-serif; /* Police */
+    height: 50px; /* Hauteur de l'élément */
+    margin: 0% 0%; /* Marge nulle en haut et en bas */
+    flex-basis: 100%; /* Largeur flexible de 100% de l'espace disponible */
+    text-align: center; /* Centre le texte horizontalement */
+    display: flex; /* Utilise Flexbox pour la mise en page */
+    justify-content: center; /* Centre le contenu horizontalement (Flexbox) */
+    align-items: center; /* Centre le contenu verticalement (Flexbox) */
+    cursor: pointer; /* Curseur change au survol */
+    background-color: #c4f8ef; /* Couleur d'arrière-plan */
 }
 
-
-.boxitem5{
-    opacity: 1;
-    font-weight: bold;
-    cursor: pointer;
-    color: black;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0% 0%;
-    flex-basis: 75%;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffbdfd;
-    border-radius: 50px;
+/* Styles pour .boxitem5 */
+.boxitem5 {
+    opacity: 1; /* Opacité de 1 signifie complètement visible */
+    font-weight: bold; /* Police en gras */
+    cursor: pointer; /* Curseur change au survol */
+    color: black; /* Couleur du texte */
+    font-family: Arial, Helvetica, sans-serif; /* Police */
+    margin: 0% 0%; /* Marge nulle en haut et en bas */
+    flex-basis: 75%; /* Largeur flexible de 75% de l'espace disponible */
+    text-align: center; /* Centre le texte horizontalement */
+    display: flex; /* Utilise Flexbox pour la mise en page */
+    justify-content: center; /* Centre le contenu horizontalement (Flexbox) */
+    align-items: center; /* Centre le contenu verticalement (Flexbox) */
+    background-color: #c4f8ef; /* Couleur d'arrière-plan */
+    border-radius: 50px; /* Rayon de bordure pour arrondir les coins */
 }
 
+/* Styles pour .boxitem6 */
 .boxitem6 {
-    opacity: 1;
-    color: black;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0% 0%;
-    font-size: 22px;
-    flex-basis: 33.19%;
-    text-align: center;
-    border: 1px solid red;
-    animation: changeColor 12s infinite, changeColorText 12s infinite;
-    cursor: pointer;
-    background-color: #c4f8ef;
-    transition: background-color 0.5s, opacity 0.5s;
-    cursor: pointer;
-}
-.boxitem6:hover {
-    background-color: #ffbdfd;
+    opacity: 1; /* Opacité de 1 signifie complètement visible */
+    color: black; /* Couleur du texte */
+    font-family: Arial, Helvetica, sans-serif; /* Police */
+    margin: 0% 0%; /* Marge nulle en haut et en bas */
+    font-size: 22px; /* Taille de la police */
+    flex-basis: 33.19%; /* Largeur flexible de 33.19% de l'espace disponible */
+    text-align: center; /* Centre le texte horizontalement */
+    border: 1px solid #d3d3d3; /* Bordure de 1 pixel solide avec couleur #d3d3d3 */
+    cursor: pointer; /* Curseur change au survol */
+    background-color: #c4f8ef; /* Couleur d'arrière-plan */
 }
 
-.boxitem7{
-    opacity: 1;
-    font-weight: bold;
-    color: black;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0% 0%;
-    font-size: 22px;
-    flex-basis: 25%;
-    text-align: center;
-    background-color: #ffbdfd;
-    border-radius: 50px;
+/* Styles pour .boxitem7 */
+.boxitem7 {
+    opacity: 1; /* Opacité de 1 signifie complètement visible */
+    font-weight: bold; /* Police en gras */
+    color: black; /* Couleur du texte */
+    font-family: Arial, Helvetica, sans-serif; /* Police */
+    margin: 0% 0%; /* Marge nulle en haut et en bas */
+    font-size: 22px; /* Taille de la police */
+    flex-basis: 25%; /* Largeur flexible de 25% de l'espace disponible */
+    text-align: center; /* Centre le texte horizontalement */
+    background-color: #c4f8ef; /* Couleur d'arrière-plan */
+    border-radius: 50px; /* Rayon de bordure pour arrondir les coins */
 }
 
-.boxitem8{
-    opacity: 1;
-    font-size: 25px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: black;
-    height: 50px;
-    margin: 0% 0%;
-    flex-basis: 100%;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    background-color: #c4f8ef;
-    transition: background-color 0.5s, opacity 0.5s;
-    cursor: pointer;
-}
-.boxitem8:hover {
-    background-color: #ffbdfd;
+/* Styles pour .boxitem8 */
+.boxitem8 {
+    opacity: 1; /* Opacité de 1 signifie complètement visible */
+    font-size: 25px; /* Taille de la police */
+    font-family: Arial, Helvetica, sans-serif; /* Police */
+    color: black; /* Couleur du texte */
+    height: 50px; /* Hauteur de l'élément */
+    margin: 0% 0%; /* Marge nulle en haut et en bas */
+    flex-basis: 100%; /* Largeur flexible de 100% de l'espace disponible */
+    text-align: center; /* Centre le texte horizontalement */
+    display: flex; /* Utilise Flexbox pour la mise en page */
+    justify-content: center; /* Centre le contenu horizontalement (Flexbox) */
+    align-items: center; /* Centre le contenu verticalement (Flexbox) */
+    cursor: pointer; /* Curseur change au survol */
+    background-color: #c4f8ef; /* Couleur d'arrière-plan */
 }
 
-
-
-/* Ajoutez ces styles pour afficher les ronds en ligne */
+/* Styles pour afficher les ronds en ligne dans la classe .boxitem */
 .boxitem .Rond {
     display: inline-block; /* Afficher les ronds en ligne */
-    margin: 0 10px; /* Ajouter une marge horizontale entre les ronds */
-    width: 32px; /* Vous pouvez ajuster la taille en fonction de vos besoins */
-    height: 32px; /* Assurez-vous que width et height sont égaux pour obtenir des cercles */
-    border-radius: 50%; /* Crée un bord arrondi pour obtenir des cercles */
-    background-color: grey;
-    transition: background-color 0.5s, opacity 0.5s;
-    cursor: pointer;
+    margin: 0 10px; /* Marge horizontale entre les ronds */
+    width: 32px; /* Taille des ronds */
+    height: 32px;
+    border-radius: 50%; /* Crée des cercles */
+    background-color: grey; /* Couleur de fond par défaut */
+    transition: background-color 0.5s, opacity 0.5s; /* Effet de transition */
+    cursor: pointer; /* Curseur change au survol */
 }
 
+/* Lorsque les ronds dans .boxitem sont survolés, la couleur de fond change */
 .boxitem .Rond:hover {
     background-color: white;
 }
 
-
-
+/* Styles pour les boutons */
 .btn {
+    /* Styles des boutons */
     display: inline-block;
-    background-color: red;
+    background-color: #fefee2;
     color: black;
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
     transition: background-color 0.5s ease;
+    border-radius: 20px;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-basis: 50%;
-    animation: changeColorFond 12s infinite;
 }
 
-
-.color-button {
-
-    width: 40px;
-    height: 20px;
-    flex-basis: 100%;
+/* Lorsque les boutons sont survolés, la couleur de fond change */
+.btn:hover {
+    background-color: #d3d3d3;
 }
 
+/* Styles pour le bouton "Commencez une partie" */
 .btn_partie {
+    /* Styles du bouton "Commencez une partie" */
     display: inline-block;
     padding: 10px 20px;
-    background-color: #ffbdfd;
+    background-color: #fefee2;
     color: black;
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
@@ -262,9 +229,14 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: changeColorFond 12s infinite;
 }
 
+/* Lorsque les boutons sont survolés, la couleur de fond change */
+.btn_partie:hover{
+    background-color: #d3d3d3;
+}
+
+/* Classes de couleurs (red, yellow, green, etc.) */
 .red{
     background-color: red;
 }
@@ -297,22 +269,27 @@ body{
     background-color: white;
 }
 
-
+/* Styles pour les ronds */
 .Rond {
+    /* Styles des ronds */
     width: 32px; /* Vous pouvez ajuster la taille en fonction de vos besoins */
     height: 32px; /* Assurez-vous que width et height sont égaux pour obtenir un cercle */
     border-radius: 50%; /* Cette propriété crée un bord arrondi équivalent à un cercle */
-    background-color: grey;
+    background-color: grey; /* Couleur de fond par défaut */
 }
 
+/* Styles pour les petits ronds */
 .PetitRond {
+    /* Styles des petits ronds */
     width: 16px; /* Vous pouvez ajuster la taille en fonction de vos besoins */
     height: 16px; /* Assurez-vous que width et height sont égaux pour obtenir un cercle */
     border-radius: 50%; /* Cette propriété crée un bord arrondi équivalent à un cercle */
-    background-color: grey;
-  }
+    background-color: grey; /* Couleur de fond par défaut */
+}
 
+/* Définition des animations pour changer la couleur de la bordure et du texte */
 @keyframes changeColor {
+    /* Animation pour la couleur de la bordure */
     0% {
     border-color: red;
     }
@@ -333,12 +310,11 @@ body{
     }
     100% {
     border-color: red;
-    }
-        
-    
+    } 
 }
 
 @keyframes changeColorText {
+    /* Animation pour la couleur du texte */
     0% {
     color: red;
     }
@@ -360,32 +336,4 @@ body{
     100% {
     color: red;
     }
-        
-    
-}
-
-@keyframes changeColorFond {
-    0% {
-    background-color: red;
-    }
-    16.67% {
-    background-color: brown;
-    }
-    33.34% {
-    background-color: orange;
-    }
-    50% {
-    background-color: yellow;
-    }
-    66.67% {
-    background-color: green;
-    }
-    83.34% {
-    background-color: blue;
-    }
-    100% {
-    background-color: red;
-    }
-        
-    
 }
