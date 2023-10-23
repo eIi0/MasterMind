@@ -4,76 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mastermind</title>
-    <link rel="stylesheet" href="MasterMind_Tommasini_Perlin.css">
+    <link rel="stylesheet" href="MasterMind_Tommasini_Perlin.css"> <!-- Inclut le fichier CSS externe -->
 </head>
 <body>
-    <header class="header">Mini Mastermind</header>
+    <header class="header">Mini Mastermind</header> <!-- En-tête de la page -->
+
+    <!-- Zone pour commencer une partie -->
     <div class="boxitem4">
         <input class="btn_partie" type="button" value="Commencer une partie !!!" onclick="rejouer()" />
-
     </div>
 
+    <!-- Affiche le score -->
     <div class="boxitem8">
         SCORE :
         <div id="Score">0</div>
     </div>
-    <div class="boxitem7">Règles du MasterMind :
-    </div>
-    <div class="boxitem5">Le but est de découvrir la combinaison de couleurs en les renseignant dans les champs 'Propositions'.
-    </div>
+
+    <!-- Section des règles du MasterMind -->
+    <div class="boxitem7">Règles du MasterMind :</div>
+    <div class="boxitem5">Le but est de découvrir la combinaison de couleurs en les renseignant dans les champs 'Propositions'.</div>
+
+    <!-- Section d'affichage des couleurs et des explications -->
     <div class="boxitem4">
-        <div class="boxitem4">
-        Les couleurs sont : 
-        <div class="PetitRond" style="background-color: red;"> </div>
-        R 
-        <div class="PetitRond" style="background-color: brown;"> </div>
-        M 
-        <div class="PetitRond" style="background-color: orange;"> </div>
-        O 
-        <div class="PetitRond" style="background-color: yellow;"> </div>
-        J 
-        <div class="PetitRond" style="background-color: green;"> </div>
-        V 
-        <div class="PetitRond" style="background-color: blue;"> </div>
-        B
-        <div class="boxitem7"></div>
-        En cas de couleur inexistante, c'est un rond noir qui apparaitra:
-        <div class="PetitRond" style="background-color: black;"> </div>
+        <div class="boxitem4">Les couleurs sont : 
+            <div class="PetitRond" style="background-color: red;"> </div> R 
+            <div class="PetitRond" style="background-color: brown;"> </div> M 
+            <div class="PetitRond" style="background-color: orange;"> </div> O 
+            <div class="PetitRond" style="background-color: yellow;"> </div> J 
+            <div class="PetitRond" style="background-color: green;"> </div> V 
+            <div class="PetitRond" style="background-color: blue;"> </div> B
+            <div class="boxitem7"></div>
+            En cas de couleur inexistante, c'est un rond noir qui apparaitra:
+            <div class="PetitRond" style="background-color: black;"> </div>
+        </div>
     </div>
+
+    <!-- Section expliquant la signification des réponses -->
     <div class="boxitem4">
         La colonne Affichage, affiche votre proposition.<br>
-        <div></div>
-        Les réponses sont : <div class="PetitRond" style="background-color: black;"></div> réponse juste.
+        Les réponses sont : 
+        <div class="PetitRond" style="background-color: black;"></div> réponse juste.
         <div class="PetitRond" style="background-color: grey;"></div> couleur mal placée.
         <div class="PetitRond" style="background-color: white;"></div> réponse incorrecte.
-    </div>
-        
+    </div>  
 
+    <div class="boxitem4"></div>
 
-    </div>
-
+    <!-- Colonnes pour les Propositions, l'Affichage et les Réponses -->
     <div class="boxitem6">Propositions</div>
     <div class="boxitem6">Affichage</div>
     <div class="boxitem6">Réponses</div>
 
-    <div class="boxitem2" >  
+    <!-- Entrée de texte pour la Proposition 1 -->
+    <div class="boxitem2">
         <input type="text_format" id="Text1">
     </div>
-    <div class="boxitem3" id="Input1">
-        <input class="btn" type="button" value="Submit" onclick="SentInput(1)"></div>
 
-    <div class="boxitem" >
+    <!-- Bouton de soumission pour la Proposition 1 -->
+    <div class="boxitem3" id="Input1">
+        <input class="btn" type="button" value="Submit" onclick="SentInput(1)">
+    </div>
+
+    <!-- Colonnes d'affichage des couleurs pour la Proposition 1 -->
+    <div class="boxitem">
         <div class="Rond" id="Affichage1_0"></div>
         <div class="Rond" id="Affichage1_1"></div>
         <div class="Rond" id="Affichage1_2"></div>
         <div class="Rond" id="Affichage1_3"></div>
     </div>
+
+    <!-- Colonnes d'affichage des résultats pour la Proposition 1 -->
     <div class="boxitem">
         <div class="Rond" id="Resultat1_0"></div>
         <div class="Rond" id="Resultat1_1"></div>
         <div class="Rond" id="Resultat1_2"></div>
         <div class="Rond" id="Resultat1_3"></div>
     </div>
+
+    <!-- Répétition des sections pour les Propositions 2 à 9 (les commentaires restent identiques) -->
+    <!-- ... -->
 
     <div class="boxitem2" >  
         <input type="text_format" id="Text2">
@@ -213,8 +222,9 @@
         <div class="Rond" id="Resultat9_3"></div>
     </div>
      
-    <footer class="footer"> Copyright Elio Tommasini - Clément Perlin</footer>
+    <footer class="footer"> Copyright Elio Tommasini - Clément Perlin</footer> <!-- Pied de page avec les noms des créateurs -->
 
-    <script src="MasterMind_Tommasini_Perlin.js"></script>
-</body>
+    <script src="MasterMind_Tommasini_Perlin.js"></script> <!-- Inclut le fichier JavaScript externe -->
+    </body>
 </html>
+    
